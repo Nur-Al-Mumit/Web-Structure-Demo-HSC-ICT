@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>হাইব্রিড কাঠামো - হোম</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="../index.html" class="back-home">← মূল পাতা</a>
+    <div class="structure-badge">🏢 হাইব্রিড কাঠামো</div>
+    <div class="hybrid-diagram">
+        <svg viewBox="0 0 360 290">
+            <line class="tree-line" x1="180" y1="28" x2="55" y2="130" />
+            <line class="tree-line" x1="180" y1="28" x2="305" y2="130" />
+            <line class="tree-line" x1="55" y1="145" x2="20" y2="260" />
+            <line class="tree-line" x1="55" y1="145" x2="115" y2="260" />
+            <line class="cross-line" x1="20" y1="260" x2="305" y2="145" />
+            <line class="cross-line" x1="305" y1="130" x2="55" y2="130" />
+        </svg>
+        <a href="index.html" class="h-node pos-home active">হোম</a>
+        <a href="products.html" class="h-node pos-products">পণ্যসমূহ</a>
+        <a href="blog.html" class="h-node pos-blog">ব্লগ</a>
+        <a href="product1.html" class="h-node pos-p1">পণ্য ১</a>
+        <a href="product2.html" class="h-node pos-p2">পণ্য ২</a>
+    </div>
+    <div class="legend">
+        <span><span class="dot tree"></span> ট্রি লিংক (প্যারেন্ট → চাইল্ড)</span>
+        <span><span class="dot cross"></span> ক্রস-লিংক (শর্টকাট)</span>
+    </div>
+    <nav class="navbar">
+        <a href="index.html" class="active-nav">🏠 হোম</a>
+        <a href="products.html">📦 পণ্যসমূহ</a>
+        <a href="blog.html">📝 ব্লগ</a>
+    </nav>
+    <div class="container">
+        <div class="hero">
+            <h1>🏢 হোম পেজ</h1>
+            <p class="subtitle">হাইব্রিড (Hybrid) কাঠামো ডেমো</p>
+        </div>
+        <div class="card">
+            <h2>হাইব্রিড কাঠামো কী?</h2>
+            <p><strong>হাইব্রিড কাঠামো</strong> হলো ট্রি / হ্যায়ারার্কিক্যল কাঠামো + ওয়েব / নেটওয়ার্ক কাঠামোর সংমিশ্রণ। এতে
+                <strong>প্যারেন্ট-চাইল্ড</strong> সম্পর্ক (ট্রিের মতো) এবং <strong>ক্রস-লিংক</strong> (শর্টকাট) দুটোই
+                থাকে।</p>
+            <ul>
+                <li>হোম → পণ্যসমূহ → পণ্য ১, পণ্য ২ <em>(ট্রি হ্যায়ারার্কি)</em></li>
+                <li>পণ্য ১ থেকে সরাসরি ব্লগে যাওয়া যায় <em>(ক্রস-লিংক / শর্টকাট)</em></li>
+                <li>উপরের নেভবার সব প্রধান সেকশনে লিংক করে <em>(ওয়েব / নেটওয়ার্কের মতো সংযোগ)</em></li>
+            </ul>
+        </div>
+        <h2 style="text-align:center; margin-bottom:18px; color:#7dd3fc;">📂 চাইল্ড পেজ (ট্রি লিংক)</h2>
+        <div class="children-grid">
+            <a href="products.html" class="child-link">
+                <span class="icon">📦</span> পণ্যসমূহ
+                <span class="badge-type tree-link">ট্রি লিংক</span>
+            </a>
+            <a href="blog.html" class="child-link">
+                <span class="icon">📝</span> ব্লগ
+                <span class="badge-type tree-link">ট্রি লিংক</span>
+            </a>
+        </div>
+    </div>
+    <footer>
+        <p>হাইব্রিড কাঠামো ডেমো — ওয়েব স্ট্রাকচার</p>
+    </footer>
+</body>
+
+</html>

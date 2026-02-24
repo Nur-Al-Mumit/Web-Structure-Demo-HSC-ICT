@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ওয়েবসাইটের কাঠামো - প্রেজেন্টেশন</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hind Siliguri', 'Outfit', sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0a0a1a, #121228, #0d0d22);
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        /* -- Animated Background Particles -- */
+        .bg-glow {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 0;
+            animation: float 12s ease-in-out infinite alternate;
+        }
+
+        .bg-glow.g1 {
+            width: 500px;
+            height: 500px;
+            background: #6c63ff;
+            top: -100px;
+            left: -100px;
+        }
+
+        .bg-glow.g2 {
+            width: 400px;
+            height: 400px;
+            background: #00c896;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -6s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1.0);
+            }
+
+            100% {
+                transform: translate(40px, 30px) scale(1.1);
+            }
+        }
+
+        /* -- Hero Section -- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            color: #a0a0ff;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, #fff, #a0a0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* -- Structure Cards -- */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .structure-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 35px;
+            transition: all 0.4s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+
+        .structure-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            background: rgba(108, 99, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+        }
+
+        .card-tree .card-icon {
+            background: rgba(0, 200, 150, 0.15);
+        }
+
+        .card-web .card-icon {
+            background: rgba(255, 100, 150, 0.15);
+        }
+
+        .card-hybrid .card-icon {
+            background: rgba(255, 160, 50, 0.15);
+        }
+
+        .structure-card h2 {
+            font-size: 1.4rem;
+            color: #fff;
+        }
+
+        .card-subtitle {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-desc {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .feature-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .demo-btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #6c63ff, #e040fb);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .card-tree .demo-btn {
+            background: linear-gradient(90deg, #00c896, #00b4d8);
+        }
+
+        .card-web .demo-btn {
+            background: linear-gradient(90deg, #ff4b91, #ff80b5);
+        }
+
+        .card-hybrid .demo-btn {
+            background: linear-gradient(90deg, #fb923c, #f59e0b);
+        }
+
+        .demo-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            filter: brightness(1.1);
+        }
+
+        /* Mini Diagrams */
+        .mini-diagram {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-size: 0.8rem;
+        }
+
+        .mini-node {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .mini-node.highlight {
+            background: rgba(108, 99, 255, 0.2);
+            color: #a0a0ff;
+            font-weight: bold;
+        }
+
+        .mini-arrow {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .mini-tree {
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .mini-tree-row {
+            display: flex;
+            gap: 6px;
+        }
+
+        .mini-tree-connector {
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 0.7rem;
+            line-height: 1;
+        }
+
+        /* -- Comparison Section -- */
+        .comparison-section {
+            padding: 80px 0;
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        .comparison-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .type-badge {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .linear {
+            background: rgba(108, 99, 255, 0.1);
+            color: #6c63ff;
+        }
+
+        .tree {
+            background: rgba(0, 200, 150, 0.1);
+            color: #00c896;
+        }
+
+        .web {
+            background: rgba(255, 100, 150, 0.1);
+            color: #ff6496;
+        }
+
+        .hybrid {
+            background: rgba(255, 160, 50, 0.1);
+            color: #ffa032;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .heart {
+            color: #ff4b91;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-glow g1"></div>
+    <div class="bg-glow g2"></div>
+
+    <div class="container">
+        <header>
+            <div class="hero-badge">আইসিটি বিষয় — আলিম ২য় বর্ষ</div>
+            <h1>ওয়েবসাইটের কাঠামো (Web Structure)</h1>
+            <p>ওয়েবসাইট তৈরি করার সময় পেজগুলো কীভাবে একে অপরের সাথে সংযুক্ত থাকে — সেটাই হলো ওয়েবসাইটের কাঠামো। এখানে
+                চারটি প্রধান কাঠামো দেখানো হয়েছে।</p>
+        </header>
+
+        <div class="cards-container">
+            <!-- 1. Linear -->
+            <div class="structure-card card-linear" style="animation-delay: 0.1s">
+                <div class="card-header">
+                    <div class="card-icon">➡️</div>
+                    <div>
+                        <h2>১। লিনিয়ার কাঠামো</h2>
+                        <div class="card-subtitle">Linear Structure</div>
+                    </div>
+                </div>
+                <div class="mini-diagram">
+                    <span class="mini-node highlight">হোম</span>
+                    <span class="mini-arrow">→</span>
+                    <span class="mini-node">পৃষ্ঠা ১</span>
+                    <span class="mini-arrow">→</span>
+                    <span class="mini-node">পৃষ্ঠা ২</span>
+                </div>
+                <p class="card-desc">পেজগুলো একটার পর একটা সিরিয়ালে সাজানো থাকে — ঠিক বইয়ের পাতার মতো। একটি পেজ থেকে
+                    শুধু আগের বা পরের পেজে যাওয়া যায়।</p>
+                <div class="features">
+                    <span class="feature-tag">📖 বইয়ের মতো</span>
+                    <span class="feature-tag">🔢 ধারাবাহিক</span>
+                    <span class="feature-tag">➡️ একমুখী</span>
+                </div>
+                <a href="1-Linear-Structure/index.html" class="demo-btn">🔗 ডেমো দেখুন →</a>
+            </div>
+
+            <!-- 2. Tree / Hierarchical -->
+            <div class="structure-card card-tree" style="animation-delay: 0.2s">
+                <div class="card-header">
+                    <div class="card-icon">🌳</div>
+                    <div>
+                        <h2>২। ট্রি / হ্যায়ারার্কিক্যল কাঠামো</h2>
+                        <div class="card-subtitle">Tree / Hierarchical Structure</div>
+                    </div>
+                </div>
+                <div class="mini-diagram mini-tree">
+                    <div class="mini-tree-row">
+                        <span class="mini-node highlight">মাদরাসা হোম</span>
+                    </div>
+                    <div class="mini-tree-connector">┣━━━━━━╋━━━━━━┫</div>
+                    <div class="mini-tree-row">
+                        <span class="mini-node">শিক্ষক</span>
+                        <span class="mini-node">বিভাগ</span>
+                        <span class="mini-node">ভর্তি</span>
+                    </div>
+                    <div class="mini-tree-connector">
+                        ┃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;┃</div>
+                    <div class="mini-tree-row">
+                        <span class="mini-node" style="font-size:0.7rem">প্রধান</span>
+                        <span class="mini-node" style="font-size:0.7rem">সহকারী</span>
+                        <span class="mini-node" style="font-size:0.7rem">দাখিল</span>
+                        <span class="mini-node" style="font-size:0.7rem">আলিম</span>
+                    </div>
+                </div>
+                <p class="card-desc">মাদরাসার প্রশাসনিক ও শিক্ষা কাঠামোর মতো এটি ৪ স্তরে বিভক্ত। মূল পেজ থেকে
+                    শাখা-প্রশাখার মতো চাইল্ড পেজ তৈরি হয় এবং চাইল্ড থেকে শুধু প্যারেন্টে ফেরা যায়।</p>
+                <div class="features">
+                    <span class="feature-tag">🌿 শাখা-প্রশাখা</span>
+                    <span class="feature-tag">👨‍👧‍👦 প্যারেন্ট-চাইল্ড</span>
+                    <span class="feature-tag">🏫 মাদরাসা ব্যবস্থাপনা</span>
+                </div>
+                <a href="2-Tree-Structure/index.html" class="demo-btn">🔗 ডেমো দেখুন →</a>
+            </div>
+
+            <!-- 3. Web -->
+            <div class="structure-card card-web" style="animation-delay: 0.3s">
+                <div class="card-header">
+                    <div class="card-icon">🕸️</div>
+                    <div>
+                        <h2>৩। ওয়েব / নেটওয়ার্ক কাঠামো</h2>
+                        <div class="card-subtitle">Web / Network Structure</div>
+                    </div>
+                </div>
+                <div class="mini-diagram">
+                    <span class="mini-node highlight">হোম</span>
+                    <span class="mini-arrow">↔️</span>
+                    <span class="mini-node">সার্ভিস</span>
+                    <span class="mini-arrow">↔️</span>
+                    <span class="mini-node">টিম</span>
+                    <span class="mini-arrow">↔️</span>
+                    <span class="mini-node">কন্টাক্ট</span>
+                </div>
+                <p class="card-desc">প্রতিটি পেজ থেকে অন্য যেকোনো পেজে সরাসরি যাওয়া যায় — মাকড়সার জালের মতো সব পেজ
+                    সবার সাথে সংযুক্ত। কোনো নিয়ম নেই!</p>
+                <div class="features">
+                    <span class="feature-tag">🕸️ জালের মতো</span>
+                    <span class="feature-tag">⚡ দ্রুত নেভিগেশন</span>
+                    <span class="feature-tag">🔄 সব পেজ সংযুক্ত</span>
+                </div>
+                <a href="3-Web-Structure/index.html" class="demo-btn">🔗 ডেমো দেখুন →</a>
+            </div>
+
+            <!-- 4. Hybrid -->
+            <div class="structure-card card-hybrid" style="animation-delay: 0.4s">
+                <div class="card-header">
+                    <div class="card-icon">🏢</div>
+                    <div>
+                        <h2>৪। হাইব্রিড কাঠামো</h2>
+                        <div class="card-subtitle">Hybrid Structure</div>
+                    </div>
+                </div>
+                <div class="mini-diagram mini-tree">
+                    <div class="mini-tree-row">
+                        <span class="mini-node highlight">হোম</span>
+                    </div>
+                    <div class="mini-tree-connector">┣━━━━━━┫</div>
+                    <div class="mini-tree-row">
+                        <span class="mini-node">পেজ ১</span>
+                        <span style="color:rgba(251,146,60,0.5)">↔️</span>
+                        <span class="mini-node">পেজ ২</span>
+                    </div>
+                    <div class="mini-tree-connector" style="color:rgba(251,146,60,0.4)">↕ ক্রস-লিংক</div>
+                    <div class="mini-tree-row">
+                        <span class="mini-node" style="font-size:0.72rem">পণ্য ১</span>
+                        <span class="mini-node" style="font-size:0.72rem">পণ্য ২</span>
+                    </div>
+                </div>
+                <p class="card-desc">ট্রি / হ্যায়ারার্কিক্যল কাঠামো + ওয়েব / নেটওয়ার্ক কাঠামো মিলিয়ে তৈরি।
+                    প্যারেন্ট-চাইল্ড সম্পর্ক আছে, আবার শর্টকাট লিংক (ক্রস-লিংক) ও আছে — সবচেয়ে বেশি ব্যবহৃত কাঠামো!</p>
+                <div class="features">
+                    <span class="feature-tag">➕ মিশ্র কাঠামো</span>
+                    <span class="feature-tag">🔗 ক্রস-লিংক</span>
+                    <span class="feature-tag">🏢 বড় ওয়েবসাইট</span>
+                </div>
+                <a href="4-Hybrid-Structure/index.html" class="demo-btn">🔗 ডেমো দেখুন →</a>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2>📊 তুলনামূলক চার্ট</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>বৈশিষ্ট্য</th>
+                        <th>লিনিয়ার</th>
+                        <th>ট্রি</th>
+                        <th>ওয়েব / নেটওয়ার্ক</th>
+                        <th>হাইব্রিড</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>গঠন</strong></td>
+                        <td><span class="type-badge linear">সিরিয়াল</span></td>
+                        <td><span class="type-badge tree">শাখাযুক্ত</span></td>
+                        <td><span class="type-badge web">ওয়েব / নেটওয়ার্কের মতো</span></td>
+                        <td><span class="type-badge hybrid">মিশ্র</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>নেভিগেশন</strong></td>
+                        <td>শুধু আগে/পরে</td>
+                        <td>উপরে/নিচে</td>
+                        <td>যেকোনো দিকে</td>
+                        <td>সব দিকে + শর্টকাট</td>
+                    </tr>
+                    <tr>
+                        <td><strong>উদাহরণ</strong></td>
+                        <td>টিউটোরিয়াল, স্লাইডশো</td>
+                        <td>সরকারি ওয়েবসাইট</td>
+                        <td>উইকিপিডিয়া</td>
+                        <td>ফেসবুক, ই-কমার্স</td>
+                    </tr>
+                    <tr>
+                        <td><strong>জটিলতা</strong></td>
+                        <td>সবচেয়ে সহজ</td>
+                        <td>মাঝারি</td>
+                        <td>জটিল</td>
+                        <td>সবচেয়ে জটিল</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ব্যবহারকারী স্বাধীনতা</strong></td>
+                        <td>সবচেয়ে কম</td>
+                        <td>সীমিত</td>
+                        <td>সম্পূর্ণ স্বাধীন</td>
+                        <td>নিয়ন্ত্রিত স্বাধীনতা</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <footer>
+        <p>তৈরি করেছেন <span class="heart">❤</span> আইসিটি ক্লাস — আলিম ২য় বর্ষ | ফেব্রুয়ারি ২০২৬</p>
+    </footer>
+</body>
+
+</html>

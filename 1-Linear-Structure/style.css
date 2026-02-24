@@ -1,0 +1,212 @@
+﻿/* ========== লিনিয়ার কাঠামো – শেয়ারড স্টাইল ========== */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hind Siliguri', 'Outfit', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.structure-badge {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    z-index: 100;
+}
+
+.back-home {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #e0e0e0;
+    z-index: 100;
+    transition: all 0.3s;
+}
+
+.back-home:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.diagram {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.diagram .node {
+    background: rgba(255, 255, 255, 0.07);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+.diagram .node.active {
+    background: linear-gradient(135deg, #6c63ff, #e040fb);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 0 24px rgba(108, 99, 255, 0.5);
+    transform: scale(1.08);
+}
+
+.diagram .arrow {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.container {
+    width: 100%;
+    max-width: 680px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 30px;
+    animation: fadeUp 0.6s ease-out;
+}
+
+.hero h1 {
+    font-size: 2.4rem;
+    background: linear-gradient(90deg, #6c63ff, #e040fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 36px 32px;
+    margin-bottom: 30px;
+    animation: fadeUp 0.7s ease-out;
+}
+
+.card h2 {
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    color: #c7b8ff;
+}
+
+.card p {
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.72);
+    margin-bottom: 12px;
+}
+
+.flow-visual {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 18px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #e040fb;
+}
+
+.flow-visual span {
+    background: rgba(224, 64, 251, 0.12);
+    padding: 6px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(224, 64, 251, 0.3);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s ease-out;
+    flex-wrap: wrap;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 14px 34px;
+    border-radius: 14px;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-next {
+    background: linear-gradient(135deg, #6c63ff, #e040fb);
+    color: #fff;
+    box-shadow: 0 6px 22px rgba(108, 99, 255, 0.35);
+}
+
+.btn-next:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 32px rgba(108, 99, 255, 0.55);
+}
+
+.btn-prev {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #e0e0e0;
+}
+
+.btn-prev:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-3px);
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

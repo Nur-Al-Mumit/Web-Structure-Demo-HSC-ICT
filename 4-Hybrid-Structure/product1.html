@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>হাইব্রিড কাঠামো - পণ্য ১</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="../index.html" class="back-home">← মূল পাতা</a>
+    <div class="structure-badge">🏢 হাইব্রিড কাঠামো</div>
+    <div class="hybrid-diagram">
+        <svg viewBox="0 0 360 290">
+            <line class="tree-line" x1="180" y1="28" x2="55" y2="130" />
+            <line class="tree-line" x1="180" y1="28" x2="305" y2="130" />
+            <line class="tree-line" x1="55" y1="145" x2="20" y2="260" />
+            <line class="tree-line" x1="55" y1="145" x2="115" y2="260" />
+            <line class="cross-line" x1="20" y1="260" x2="305" y2="145" />
+            <line class="cross-line" x1="305" y1="130" x2="55" y2="130" />
+        </svg>
+        <a href="index.html" class="h-node pos-home">হোম</a>
+        <a href="products.html" class="h-node pos-products">পণ্যসমূহ</a>
+        <a href="blog.html" class="h-node pos-blog">ব্লগ</a>
+        <a href="product1.html" class="h-node pos-p1 active">পণ্য ১</a>
+        <a href="product2.html" class="h-node pos-p2">পণ্য ২</a>
+    </div>
+    <div class="legend"><span><span class="dot tree"></span> ট্রি লিংক</span><span><span class="dot cross"></span>
+            ক্রস-লিংক</span></div>
+    <nav class="navbar">
+        <a href="index.html">🏠 হোম</a>
+        <a href="products.html">📦 পণ্যসমূহ</a>
+        <a href="blog.html">📝 ব্লগ</a>
+    </nav>
+    <div class="container">
+        <div class="hero">
+            <h1>📱 পণ্য ১</h1>
+            <p class="subtitle">পণ্যসমূহের চাইল্ড • ব্লগে ক্রস-লিংক আছে</p>
+        </div>
+        <div class="card">
+            <h2>পণ্য ১ এর বিবরণ</h2>
+            <p>এই পেজ হলো <strong>পণ্যসমূহের চাইল্ড</strong> (ট্রি লিংক ↑)। কিন্তু ডায়াগ্রামে <strong>কমলা ড্যাশড
+                    লাইন</strong> দেখুন — এটি <strong>ব্লগের সাথে ক্রস-লিংক</strong> দেখাচ্ছে।</p>
+            <p>এই ক্রস-লিংক ট্রি হ্যায়ারার্কি ভেঙে সরাসরি এমন একটি পেজে লিংক করে যা প্যারেন্ট বা চাইল্ড নয়। এটাই
+                <strong>হাইব্রিড</strong> বানায়!</p>
+        </div>
+        <div class="children-grid">
+            <a href="products.html" class="child-link"><span class="icon">⬆</span> পণ্যসমূহ<span
+                    class="badge-type tree-link">প্যারেন্ট (ট্রি)</span></a>
+            <a href="blog.html" class="child-link"><span class="icon">📝</span> ব্লগ<span
+                    class="badge-type cross-link">ক্রস-লিংক ↗</span></a>
+        </div>
+    </div>
+    <footer>
+        <p>হাইব্রিড কাঠামো ডেমো</p>
+    </footer>
+</body>
+
+</html>
